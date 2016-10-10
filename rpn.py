@@ -2,28 +2,31 @@
 
 import operator
 
-operators = {
+operator = {
 	'+':operator.add,
 	'-':operator.sub,
 	'*':operator.mul,
-	'/':operator.truediv
+	'/':operator.truediv,
+	'^':operator.pow
 }
 
 def calculate(myarg1):
 	stack = list()
-	for token in myarg1.split():
-		try:
+	for token in myarg1.split(' '):
+		if token in ['-', '+', '*', '/', '^']:
 			stack.append(int(token))
-		except ValueError:
 			arg2 = stack.pop()
 			arg1 = stack.pop()
 			function = operator[token]
 			result - function(arg1, arg2)
 			stack.append(result)
-		print(stack)
-	if len(stack) != 1:
-		raise TypeError
-	return stack.pop()
+        else:
+            try:
+                stack.append(float(token))
+            except:
+            	raise TypeError
+ 
+    return stack.pop()
 
 def main():
 	while True:
