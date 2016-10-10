@@ -14,7 +14,6 @@ def calculate(myarg1):
 	stack = list()
 	for token in myarg1.split(' '):
 		if token in ['-', '+', '*', '/', '^']:
-			stack.append(int(token))
 			arg2 = stack.pop()
 			arg1 = stack.pop()
 			function = operator[token]
