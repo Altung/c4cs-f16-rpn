@@ -25,8 +25,8 @@ def calculate(myarg1):
                 stack.append(float(token))
             except:
             	raise TypeError
- 
-    return stack.pop()
+
+	return stack.pop()
 
 def main():
 	while True:
