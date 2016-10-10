@@ -18,13 +18,13 @@ def calculate(myarg1):
 			arg2 = stack.pop()
 			arg1 = stack.pop()
 			function = operator[token]
-			result - function(arg1, arg2)
+			result = function(arg1, arg2)
 			stack.append(result)
-        else:
-            try:
-                stack.append(float(token))
-            except:
-            	raise TypeError
+		else:
+		    try:
+		    	stack.append(float(token))
+		    except:
+		    	raise TypeError
 
 	return stack.pop()
 
@@ -33,4 +33,4 @@ def main():
 		calculate(input("rpn calc> "))
 
 if __name__ == '__main__': 
-    main()
+	main()
